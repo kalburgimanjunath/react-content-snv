@@ -5,7 +5,7 @@ import ListIdea from './ListIdea';
 import { Label, FormGroup, Input, Button } from 'reactstrap';
 
 // import { useAlert } from 'react-alert';
-export default function AddIdea() {
+export default function AddIdea({ user }) {
   // const alert = useAlert();
 
   const [ideas, setIdeas] = useState();
@@ -58,6 +58,11 @@ export default function AddIdea() {
   return (
     <div className="row" style={{ padding: 20 }} xs="2">
       <div className="col-6" xs="2">
+        {/* <img
+          src="https://media-exp1.licdn.com/dms/image/C560BAQFluX6wXyNFaw/company-logo_100_100/0/1604981764085?e=1671062400&v=beta&t=_cuback8gbjdoq9FCuDsee7Zty47V-Aq3a8X7GqUkO0"
+          width="100"
+          height="100"
+        /> */}
         <h1>Sensvio Content</h1>
         <Formik
           initialValues={{
@@ -65,6 +70,7 @@ export default function AddIdea() {
             description: '',
             image: '',
             url: '',
+            author: user.user.email,
           }}
           validate={(values) => {
             const errors = {};
@@ -129,6 +135,7 @@ export default function AddIdea() {
                 />
                 <ErrorMessage name="url" component="div" />
               </FormGroup>
+              <Field type="hidden" name="author" value={user.user.email} />
               <Button type="submit" className="primary" disabled={isSubmitting}>
                 Add Idea
               </Button>

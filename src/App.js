@@ -14,7 +14,6 @@ export default function App() {
   // }
 
   if (isConnected) {
-    console.log(user.user);
     return (
       <div>
         <div className="header">
@@ -25,14 +24,19 @@ export default function App() {
           </button>
         </div>
         <div className="container-fluid body">
-          <AddIdea />
+          <AddIdea user={user} />
         </div>
       </div>
     );
   } else {
     return (
       <div className="login">
-        <h4>Please login to start adding your ideas</h4>
+        <h4>Please login to start adding your content</h4>
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C560BAQFluX6wXyNFaw/company-logo_100_100/0/1604981764085?e=1671062400&v=beta&t=_cuback8gbjdoq9FCuDsee7Zty47V-Aq3a8X7GqUkO0"
+          width="100"
+          height="100"
+        />
         <div>
           <button
             className="btn btn-outline-success"
