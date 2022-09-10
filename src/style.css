@@ -20,6 +20,7 @@ body {
   align-content: center;
   max-width: 300px;
   margin: 20% 40%;
+  text-align: center;
 }
 .header-text {
   font-size: 24px;
