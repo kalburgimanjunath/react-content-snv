@@ -123,6 +123,7 @@ export default function ListIdea({ ideas }) {
                   <ListGroupItemHeading>
                     {item.fields['title']}
                     <button
+                      style={{ float: 'right' }}
                       onClick={() =>
                         readText(
                           item.fields['description'],
